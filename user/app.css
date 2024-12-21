@@ -5,6 +5,9 @@
   box-sizing: border-box;
 }
 
+.welcome {
+  color: #45a049;
+}
 /* Body Styling */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
