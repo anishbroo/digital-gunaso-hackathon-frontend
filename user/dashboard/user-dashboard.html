@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="user-dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DIGITAL COMPLAINT</h1>
+    </header>
+    <main>
+      <section class="grievance-form">
+        <h2>Submit a Complaint</h2>
+        <form id="grievanceForm">
+          <label for="category">Complaint Departments:</label>
+          <select id="category" required>
+            <option value="">Select department</option>
+            <option value="electricity">Electricity</option>
+            <option value="water">Water</option>
+            <option value="garbage">Garbage</option>
+          </select>
+
+          <label for="subCategory">Category:</label>
+          <select id="subCategory" required>
+            <option value="">Select category</option>
+          </select>
+
+          <label for="description">Complaint details:</label>
+          <textarea id="description" name="description" required></textarea>
+
+          <label for="image">Upload Image:</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+
+          <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Cancel</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="user-dashboard.js"></script>
+  </body>
+</html>

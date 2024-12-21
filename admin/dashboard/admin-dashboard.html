@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="admin-dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="user-info">
+          <p>Admin: <span id="admin-username">example</span></p>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#" class="active" id="dashboard-link">Dashboard</a>
+            </li>
+            <li><a href="#" id="reports-link">Reports</a></li>
+            <li><a href="#" id="complaints-link">User Complaints</a></li>
+            <li><a href="#" id="category-link">Category</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main id="main-content">
+        <header class="header">
+          <h1>Dashboard</h1>
+          <div class="profile">
+            <span>Welcome, Admin</span>
+            <img src="profile.png" alt="Profile Picture" />
+          </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section class="dashboard" id="dashboard-section">
+          <div class="dashboard-box">
+            <h3>Electricity</h3>
+            <p>Total Complaints: 120</p>
+          </div>
+          <div class="dashboard-box">
+            <h3>Water</h3>
+            <p>Total Complaints: 80</p>
+          </div>
+          <div class="dashboard-box">
+            <h3>Garbage</h3>
+            <p>Total Complaints: 50</p>
+          </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section class="reports" id="reports-section" style="display: none">
+          <h2>Reports by Department</h2>
+          <label for="department-dropdown">Choose Department: </label>
+          <select id="department-dropdown">
+            <option value="electricity">Electricity</option>
+            <option value="water">Water</option>
+            <option value="garbage">Garbage</option>
+          </select>
+
+          <div id="complaint-list" class="complaint-list">
+            <!-- Complaints will appear here based on selected department -->
+          </div>
+        </section>
+
+        <!-- User Complaints Section -->
+        <section
+          class="user-complaints"
+          id="user-complaints-section"
+          style="display: none"
+        >
+          <h2>User Complaints</h2>
+          <div id="complaints-detail">
+            <label for="complaint-department">Department:</label>
+            <select id="complaint-department">
+              <option value="electricity">Electricity</option>
+              <option value="water">Water</option>
+              <option value="garbage">Garbage</option>
+            </select>
+
+            <label for="complaint-category">Category:</label>
+            <select id="complaint-category">
+              <!-- Category options will be populated dynamically -->
+            </select>
+
+            <label for="complaint-details">Complaint Details:</label>
+            <textarea
+              id="complaint-details"
+              placeholder="Enter complaint details"
+            ></textarea>
+
+            <label for="complaint-status">Status:</label>
+            <div id="complaint-status">
+              <button
+                class="status-button"
+                id="not-done"
+                data-status="not-done"
+              >
+                Not Done
+              </button>
+              <button
+                class="status-button"
+                id="in-progress"
+                data-status="in-progress"
+              >
+                In Progress
+              </button>
+              <button
+                class="status-button"
+                id="completed"
+                data-status="completed"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Category Section -->
+        <section class="category" id="category-section" style="display: none">
+          <h2>Manage Departments</h2>
+          <div class="department-management">
+            <ul id="departments">
+              <!-- Departments will be dynamically populated -->
+            </ul>
+            <div class="add-department">
+              <input
+                type="text"
+                id="new-department"
+                placeholder="New Department"
+              />
+              <button id="add-department">Add</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+  </body>
+</html>
